@@ -1,45 +1,43 @@
 export type optionType = {
-    name:string
-    lat:number
-    lon:number
-}
-export type foreCastType = {
-    name:string
-    sunrise:string
-    sunset:string
-    list:[
-    {
-        dt:number
-        main:[
-            {
-                feels_like:number
-                humidity:number
-                temp:number
-                temp_max:number
-                temp_min:number
-                pressure:number
-            }
+    name: string
+    country: string
+    lat: number
+    lon: number
+  }
+  
+  export type forecastType = {
+    name: string
+    country: string
+    list: [
+      {
+        dt: number
+        main: {
+          feels_like: number
+          humidity: number
+          pressure: number
+          temp: number
+          temp_max: number
+          temp_min: number
+        }
+        weather: [
+          {
+            main: string
+            icon: string
+            description: string
+          }
         ]
-        weather:[
-            {
-                description:string
-                icon:string
-                id:number
-                main:string
-            }
-        ]
-        wind:[
-            {
-                speed:number
-                gust:number
-                deg:number
-            }
-        ]
-        clouds:[
-                all:number
-        ]
-        pop:number
-        visibility:number
-    }
+        wind: {
+          speed: number
+          gust: number
+          deg: number
+        }
+        clouds: {
+          all: number
+        }
+        pop: number
+        visibility: number
+      }
     ]
-}
+    sunrise: number
+    sunset: number
+  }

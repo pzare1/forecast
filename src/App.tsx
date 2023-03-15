@@ -1,12 +1,13 @@
 import { useState,ChangeEvent, useEffect } from 'react';
 import { optionType } from './types';
-import { foreCastType } from './types';
+import { forecastType } from './types';
 import Search from './components/Search';
+import Forecast from './components/Forecast';
 function App():JSX.Element {
 const [term, setterm] = useState<string>('');
 const [city, setcity] = useState<optionType | null>(null)
 const [options, setoptions] = useState<[]>([])
-const [forecast, setforecast] = useState<foreCastType| null>(null)
+const [forecast, setforecast] = useState<forecastType | null>(null)
 const getFetchValue = (value:string) => {
  fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${value.trim()}&limit=5&appid=${process.env.REACT_APP_API_KEY}`)
  .then((res) => res.json()).then((data) => setoptions(data))
@@ -46,7 +47,7 @@ return (
 <div className='flex justify-center items-center w-full h-[100vh] bg-gradient-to-br bg-bg-dark bg-bg-light'>
   {forecast ? 
   (
-    <h1 className='text-white'>{forecast.sunrise}</h1>
+    <Forecast data={forecast}/>
   ):
   (  <Search term={term} options={options} inputChange={inputChange} onOptionSelect={onOptionSelect} onSubmit={onSubmit}/>)
   }

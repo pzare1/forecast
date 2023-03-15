@@ -6,7 +6,8 @@ module.exports = {
       colors:{
         "bg-dark":"#22262B",
         "bg-light":"#171A1D",
-        "box":"#24282D"
+        "box":"#24282D",
+        "sub":"#383E46"
       }
     },
   },
