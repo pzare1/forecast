@@ -3,3 +3,43 @@ export type optionType = {
     lat:number
     lon:number
 }
+export type foreCastType = {
+    name:string
+    sunrise:string
+    sunset:string
+    list:[
+    {
+        dt:number
+        main:[
+            {
+                feels_like:number
+                humidity:number
+                temp:number
+                temp_max:number
+                temp_min:number
+                pressure:number
+            }
+        ]
+        weather:[
+            {
+                description:string
+                icon:string
+                id:number
+                main:string
+            }
+        ]
+        wind:[
+            {
+                speed:number
+                gust:number
+                deg:number
+            }
+        ]
+        clouds:[
+                all:number
+        ]
+        pop:number
+        visibility:number
+    }
+    ]
+}
